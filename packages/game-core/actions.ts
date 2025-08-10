@@ -1,6 +1,9 @@
 import { ActionDef, GameState, ActionRun } from './types';
 
 export function startAction(state: GameState, action: ActionDef, now = Date.now()): GameState {
+  if (state.activeRun) {
+    throw new Error('action_already_running');
+  }
   if (state.energy < action.cost.energy) {
     throw new Error('not_enough_energy');
   }

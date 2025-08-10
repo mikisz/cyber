@@ -27,8 +27,15 @@ export const useGameStore = create<GameSlice>((set, get) => ({
     if (!action) return;
     try {
       set((state) => coreStart(state, action));
-    } catch {
-      // ignore
+    } catch (e) {
+      const msg = e instanceof Error ? e.message : 'unknown_error';
+      const text =
+        msg === 'not_enough_energy'
+          ? 'Not enough energy'
+          : msg === 'action_already_running'
+            ? 'Action already running'
+            : 'Unable to start action';
+      useUIStore.getState().pushToast({ text, kind: 'error' });
     }
   },
   stopAction: () => set((state) => coreStop(state)),

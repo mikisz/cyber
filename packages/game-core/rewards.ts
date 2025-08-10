@@ -3,6 +3,7 @@ import { ActionDef, DropTableEntry, GameState } from './types';
 export function rollDropTable(entries: DropTableEntry[]): Record<string, number> {
   if (!entries.length) return {};
   const total = entries.reduce((sum, e) => sum + e.weight, 0);
+  if (total <= 0) return {};
   const roll = Math.random() * total;
   let acc = 0;
   for (const e of entries) {
