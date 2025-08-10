@@ -1,4 +1,4 @@
-import create from 'zustand';
+import { create } from 'zustand';
 import { ActionDef, ActionRun, startAction as coreStart, stopAction as coreStop, grantRewards } from '@cyberidle/game-core';
 import actionsData from '@cyberidle/content/actions.json';
 import dropTables from '@cyberidle/content/dropTables.json';
