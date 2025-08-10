@@ -2,6 +2,7 @@ import { ActionDef } from '@cyberidle/game-core';
 import { useGameStore } from '../../store/useGameStore';
 import { Button } from '../ui/Button';
 import { Card } from '../ui/Card';
+import { formatDuration } from '../../utils/time';
 
 export function ActionCard({ action }: { action: ActionDef }) {
   const start = useGameStore((s) => s.startActionById);
@@ -11,7 +12,7 @@ export function ActionCard({ action }: { action: ActionDef }) {
     <Card className="flex items-center justify-between">
       <div>
         <h3 className="text-primary">{action.title}</h3>
-        <p className="text-secondary text-sm">{Math.round(action.durationMs / 1000)}s</p>
+        <p className="text-secondary text-sm">{formatDuration(action.durationMs)}</p>
       </div>
       {active ? (
         <Button onClick={() => stop()}>Stop</Button>

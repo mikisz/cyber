@@ -3,6 +3,12 @@ export interface Rewards {
   dropTableId?: string;
 }
 
+export interface Requirement {
+  type: string;
+  skill?: string;
+  level?: number;
+}
+
 export interface ActionDef {
   id: string;
   districtId: string;
@@ -10,7 +16,7 @@ export interface ActionDef {
   title: string;
   durationMs: number;
   cost: { energy: number };
-  requirements: any[];
+  requirements: Requirement[];
   rewards: Rewards;
   meta?: Record<string, any>;
 }
