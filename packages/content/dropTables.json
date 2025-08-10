@@ -1,6 +1,0 @@
-{
-  "dt_data_low": [
-    { "itemId": "data_shard_small", "weight": 70, "qtyMin": 1, "qtyMax": 2 },
-    { "itemId": "credits", "weight": 30, "qtyMin": 10, "qtyMax": 25 }
-  ]
-}
