@@ -1,0 +1,13 @@
+[
+  {
+    "id": "hack_neighborhood_isp",
+    "districtId": "slums",
+    "type": "hacking",
+    "title": "Crack Neighborhood ISP",
+    "durationMs": 30000,
+    "cost": { "energy": 6 },
+    "requirements": [],
+    "rewards": { "xp": { "hacking": 12 }, "dropTableId": "dt_data_low" },
+    "meta": { "failChanceBase": 0.12, "difficulty": "easy" }
+  }
+]
