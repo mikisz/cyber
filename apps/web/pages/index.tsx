@@ -1,10 +1,14 @@
-import { useRouter } from 'next/router';
-import { useEffect } from 'react';
+import type { GetServerSideProps } from 'next';
+
+export const getServerSideProps: GetServerSideProps = async () => {
+  return {
+    redirect: {
+      destination: '/map',
+      permanent: false,
+    },
+  };
+};
 
 export default function Index() {
-  const router = useRouter();
-  useEffect(() => {
-    router.replace('/map');
-  }, [router]);
   return null;
 }
